@@ -32,6 +32,10 @@ Ultimately, this work concludes that for the practical application of FMs with e
 
 The full codebase, including the benchmark framework and the modular Foundation Model Wrapper API, will be made publicly available soon to promote reproducible research.
 
+## 🙏 Acknowledgements
+
+This thesis was made possible with the generous support of **[prognostica GmbH](https://www.prognostica.de/de/)** ([GitHub](https://github.com/discovertomorrow)). Their provision of infrastructure, deep industry knowledge, and expert guidance was instrumental to the success of this research.
+
 ## 🎓 Citing This Work
 
 If you find this work useful for your research, please consider citing the thesis:
