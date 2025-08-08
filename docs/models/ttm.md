@@ -43,11 +43,19 @@ A key design philosophy is the focus on **pre-training with resolution diversity
 
 ## 👎 Weaknesses & Practical Tips
 
-* **Only supports finer frequencys:** TTM is trained mainly on minutely and hourly sampled data. The R2 version adds support for daily and weekly time series. Other frequencys can be forcastet but give poor results.
+* **Only supports finer frequencies:** TTM is trained mainly on minutely and hourly sampled data. The R2 version adds support for daily and weekly time series. Other frequencies can be forecasted but give poor results.
 * **Point Forecasts Only:** TTM is designed to produce a single point forecast and does not natively support probabilistic forecasting to quantify uncertainty.
 * **Fine-Tuning Required for Covariates:** The Exogenous Mixer is only activated during the fine-tuning stage, meaning the model cannot leverage covariates in a pure zero-shot setting. This fine-tuning process can also be time-consuming.
 * **Sensitivity to Data Patterns:** The model can struggle with time series that have long sequences of zero values, which can cause its instance normalization to become unstable and lead to forecast failures.
 * **Complex Model Selection:** TTM is available in multiple releases (R1, R2, R2.1) with many pre-trained configurations for different context and prediction lengths. While there is a function for model selection provided, the optimal choice can be data-dependent and may require experimentation.
+
+---
+
+## 💻 Code Example
+
+This file provides the wrapper class for serving the TTM model within the thesis project's FastAPI service. It is a comprehensive implementation using IBM's `tsfm_public` toolkit that handles both **zero-shot inference and optional fine-tuning**. The code demonstrates how to configure and run the fine-tuning process, which activates the **Exogenous Mixer Block** for integrating covariates. It also includes practical logic for dynamically selecting the optimal pre-trained model based on the input time series length.
+
+➡️ **[View the TTM implementation file](../../code/fm-api/src/models/ttm.py)**
 
 ---
 

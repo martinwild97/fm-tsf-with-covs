@@ -40,15 +40,23 @@ A **MOIRAI-MoE (Mixture-of-Experts)** variant also exists, which replaces standa
 
 * **Unreliable Covariate Impact:** In practice, the benefit of adding covariates in a zero-shot setting is **highly inconsistent**. Because the model was pre-trained by randomly sampling different time series together, it did not explicitly learn structured covariate relationships. As a result, adding external variables can either improve or significantly degrade forecast accuracy, making it a high-risk choice without careful, task-specific validation or fine-tuning.
 * **VRAM Issues with High Dimensionality:** The model struggles with high-dimensional inputs. Providing a long context length or a large number of variables (targets + covariates) can easily lead to **CUDA out-of-memory errors**.
-* **MOIRAI-MoE Not Recommended:** The Mixture-of-Experts variant consistently underperformed in personal tests, especially with multivariate or covariate data. Seems that the MoE variant is only working on unique datasets.
+* **MOIRAI-MoE Not Recommended:** The Mixture-of-Experts variant consistently underperformed in personal tests, especially with multivariate or covariate data. The MoE variant appears to be effective only on very specific or niche datasets and generally underperforms in broader use cases.
 * **Difficult to Fine-Tune:** While fine-tuning unlocks the model's best performance, the process is not straightforward and can be challenging to implement correctly.
 * **Outdated Dependencies:** The underlying `uni2ts` library officially supports a specific version of PyTorch (e.g., 2.1) which has known security vulnerabilities. While not necessarily exploited by the model, this creates a maintenance and security concern for production environments.
 
 ---
 
+## 💻 Code Example
+
+This file contains the wrapper class for serving the MOIRAI model in the thesis project's FastAPI service. It demonstrates a practical implementation using the `uni2ts` library, which relies on `gluonts` data structures. The code highlights MOIRAI's unified approach, processing both **multivariate targets and covariates** as a single dataset, and shows how to generate probabilistic forecasts.
+
+➡️ **[View the MOIRAI implementation file](../../code/fm-api/src/models/moirai.py)**
+
+---
+
 ## 📏 Available Model Sizes
 
-MOIRAI is available in several sizes for the standard, 1.1, and MoE versions. The 1.1. version achieves significant improvements for low-frequency cases like Yearly and Quarterly data.
+MOIRAI is available in several sizes for the standard, 1.1, and MoE versions. The 1.1 version achieves significant improvements for low-frequency cases like Yearly and Quarterly data.
 
 | Model Name | Parameters |
 | :--- | :--- |

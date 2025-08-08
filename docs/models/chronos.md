@@ -59,6 +59,15 @@ This is a newer, more efficient version that makes two key changes to the archit
 
 ---
 
+## 💻 Code Example
+
+This file contains the wrapper class used to serve the Chronos model within the **FastAPI service** for the thesis benchmark. It demonstrates a practical implementation using the `autogluon.timeseries` library, including the complete logic for handling the **external regressor** to integrate both past-known and future-known covariates.
+
+
+➡️ **[View the Chronos implementation file](../../code/fm-api/src/models/chronos.py)**
+
+---
+
 ## 📏 Available Model Sizes
 
 Chronos is available in a range of sizes for both the original T5 and the newer Bolt architectures:

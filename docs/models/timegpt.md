@@ -40,7 +40,15 @@ Internally, it uses standard Transformer components like multi-head self-attenti
 
 ## 👎 Weaknesses & Practical Tips
 
-* **Proprietary and "Black Box" Nature:** Being a closed-source model, there is a **lack of architectural transparency**. Specific details about its internal mechanisms for handling covariates, its exact training data, and its full parameter count are not public. This makes independent scrutiny and replication difficult. Also there are additional costs for the API subsciption.
+* **Proprietary and "Black Box" Nature:** Being a closed-source model, there is a **lack of architectural transparency**. Specific details about its internal mechanisms for handling covariates, its exact training data, and its full parameter count are not public. This makes independent scrutiny and replication difficult, and the API subscription incurs additional costs.
 * **Inconsistent Covariate Impact:** Empirical benchmarks show that adding exogenous variables can be unreliable and often degrades performance compared to a simple univariate forecast. The benefit is highly dataset-dependent, and fine-tuning can sometimes amplify this negative effect.
 * **Performance Verification:** Independent, third-party benchmarking is less common than for open-source alternatives. Users often rely on vendor-provided information to gauge performance.
 * **Architectural Currency:** As one of the earlier FMs for TSF, its architecture might not incorporate the very latest innovations (like advanced patching or normalization techniques) seen in more recent open-source models.
+
+---
+
+## 💻 Code Example
+
+This file contains the client-side wrapper for interacting with the commercial **TimeGPT API** from the thesis benchmark code. It uses the official `nixtla` library to handle authentication, data formatting, and API calls. The implementation demonstrates how to use the model's key features, including optional **fine-tuning**, automatic selection between short and **long-horizon models**, and the correct way to pass **exogenous variables** to the service.
+
+➡️ **[View the TimeGPT implementation file](../../code/benchmark/src/models/gpu_models/timegpt.py)**

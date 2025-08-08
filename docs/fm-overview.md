@@ -12,7 +12,7 @@ As research in this area progresses at a breakneck pace, the landscape of availa
 <img src="../img/number_papers_on_tsf.png" alt="Number of Papers on TSF in Top-Tier Conferences" width="50%"/>
 </p>
 
-*Source: [Kim et al., Oct. 2024. "A comprehensive survey of deep learning for time series forecasting"](https://arxiv.org/abs/2410.13404)
+*Source: [A Comprehensive Survey of Deep Learning for Time Series Forecasting: Architectural Diversity and Open Challenges](https://arxiv.org/abs/2411.05793)
 
 
 
@@ -47,14 +47,14 @@ The development of Foundation Models for time series can be broadly categorized 
 
 ### Key Architectural Innovations
 
-Most archittectural innovations were sparked by the limitations of early Transformers, leading to a wide range of architectural improvements that now form the basis of modern FMs.
+Most architectural innovations were sparked by the limitations of early Transformers, leading to a wide range of architectural improvements that now form the basis of modern FMs.
 
 * **Patching:** This is a fundamental technique inspired by Vision Transformers to overcome the inefficiency of applying attention to individual time steps. A time series is divided into contiguous segments or "patches." This approach:
     * **Preserves Locality:** Captures local patterns within each patch more effectively than single data points can.
     * **Increases Efficiency:** Drastically reduces the sequence length for the attention mechanism, mitigating its quadratic complexity and allowing for much longer look-back windows.
 
 * **Diverse Architectures:** FMs have diversified into several distinct blueprints:
-    * **Decoder-Only** models are efficient for generation - perfect for forecating.
+    * **Decoder-Only** models are efficient for generation - perfect for forecasting.
     * **Encoder-Only** models excel at creating rich representations - suited for analysis and classification.
     * **Encoder-Decoder** (classic Transformer structure) are well-suited for sequence-to-sequence tasks where the input and output have different properties.
     * Others **adapt existing LLMs** by tokenizing time series data.
@@ -92,13 +92,13 @@ The field is evolving extremely quickly. The following resources are essential f
 
 -   **[ddz16/TSFpaper](https://github.com/ddz16/TSFpaper):** Arguably the most comprehensive repository for current research in TSF. It lists all relevant publications on arXiv, including new Foundation Models, Deep Learning architectures, surveys, benchmarks...
   
--   **[A Comprehensive Survey of Deep Learning for Time Series Forecasting](https://arxiv.org/pdf/2411.05793):** An extensive, 60-page survey that provides an excellent overview of the development from general Deep Learning models to Foundation Models in TSF. It details the technical innovations and architectural evolution that form the basis for today's FMs.
+-   **[A Comprehensive Survey of Deep Learning for Time Series Forecasting](https://arxiv.org/abs/2411.05793):** An extensive, 60-page survey that provides an excellent overview of the development from general Deep Learning models to Foundation Models in TSF. It details the technical innovations and architectural evolution that form the basis for today's FMs.
 
 -   **[GIFT-Eval](https://huggingface.co/spaces/Salesforce/GIFT-Eval):** Currently the most widely used and recognized benchmark for evaluating FMs for TSF. It includes a massive collection of datasets from various domains and ensures that no test data was used in the pre-training of the models, guaranteeing fair comparisons ([paper](https://arxiv.org/abs/2410.10393)).
 
 -   **Other Benchmarks:**
-    -   [**TSFM-Bench:**](https://arxiv.org/abs/2410.11802v6) Another comprehensive and unified benchmark for the fair evaluation of TSF Foundation Models.
-    -   [**BOOM:**](https://huggingface.co/spaces/Datadog/BOOM) A specialized, large-scale benchmark focused on the challenges of observability metrics.
+    -   [**TSFM-Bench**](https://arxiv.org/abs/2410.11802v6) Another comprehensive and unified benchmark for the fair evaluation of TSF Foundation Models.
+    -   [**BOOM**](https://huggingface.co/spaces/Datadog/BOOM) A specialized, large-scale benchmark focused on the challenges of observability metrics.
 
 ---
 

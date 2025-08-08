@@ -1,0 +1,11 @@
+--extra-index-url https://download.pytorch.org/whl/cpu  # CPU only
+
+autogluon-timeseries==1.2
+nixtla>=0.6.2
+pydantic
+statsforecast
+h11>=0.16.0
+# ray>=2.10.0,<2.40
+# torch>=2.6.0
+# seaborn
+# scikit_posthocs

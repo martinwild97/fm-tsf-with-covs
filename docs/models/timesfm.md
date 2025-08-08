@@ -42,7 +42,15 @@ The model consists of stacked Transformer layers with causal masking and residua
 * **Requires Future-Known Covariates:** The `xreg` approach requires that the values for all dynamic exogenous variables are known for the entire forecast horizon, which is a significant limitation in many real-world scenarios. The suggested "hacky" workarounds (like lagging or pre-forecasting covariates) can introduce additional errors.
 * **JAX Dependency for Covariates:** While the core model is available in PyTorch, using the exogenous variable functionality requires JAX, which can be an extra dependency for some users.
 * **No Native Handling of Missing Values:** The model cannot process time series with missing (NaN) values. Data must be complete, requiring a separate imputation or filling step during preprocessing before being fed to the model.
-* **Complex Finetuning:** Finetuning is supported for both jax and pytorch but many users mention problems in the finetuning process.
+* **Complex Finetuning:** Fine-tuning is supported for both JAX and PyTorch, but users have reported challenges with the process.
+
+---
+
+## 💻 Code Example
+
+This file contains the wrapper class for serving the TimesFM model in the thesis project's FastAPI service. It uses the official `timesfm` library and demonstrates the model's modular approach to handling external variables via the `forecast_with_covariates` function. The implementation includes the logic to pre-forecast any past-known covariates to make them available for the future horizon.
+
+➡️ **[View the TimesFM implementation file](../../code/fm-api/src/models/timesfm.py)**
 
 ---
 

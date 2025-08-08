@@ -1,0 +1,14 @@
+# autogluon
+fastapi
+gluonts
+httpx
+neuralforecast
+numpy
+pandas
+pydantic
+torch
+uni2ts
+timesfm[torch]
+granite-tsfm[notebooks] @ git+https://github.com/ibm-granite/granite-tsfm.git
+uvicorn
+pytest

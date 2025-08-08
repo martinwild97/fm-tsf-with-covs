@@ -1,4 +1,22 @@
-# Foundation Models for Time Series Forecasting with Exogenous Variables: A Survey and Benchmark
+# 📈 Foundation Models for Time Series Forecasting: A Practitioner's Guide & Research Repository
+
+This repository serves two main purposes:
+1. 🚀 It hosts the Master's Thesis **"Foundation Models for Time Series Forecasting with Exogenous Variables: A Survey and Benchmark,"** providing a deep dive into the specific challenges and solutions for integrating external data.
+2. 🎓 It offers a **general, high-level practitioner's guide** to the rapidly evolving landscape of Foundation Models (FMs) for Time Series Forecasting (TSF).
+
+Whether you are a researcher looking for detailed benchmarks or a practitioner seeking a quick overview of the current state-of-the-art models, this repository has you covered.
+
+---
+
+## 🚀 A Practitioner's Guide to Foundation Models in TSF
+
+For a comprehensive introduction to the field, including core concepts, key architectural innovations, essential resources, and detailed summaries of major models, please start here:
+
+➡️ **[Read the Full Overview: A Practitioner's Guide to Foundation Models in TSF](./docs/fm-overview.md)**
+
+---
+
+## 🎓 Foundation Models for Time Series Forecasting with Exogenous Variables: A Survey and Benchmark
 
 **Master Thesis | Fachhochschule Kiel | June 2025**
 
@@ -6,7 +24,9 @@
 **First Examiner:** [Prof. Dr. Stephan Doerfel](https://www.linkedin.com/in/doerfel/)
 **Second Examiner:** [Dr. Thomas Christ](https://www.linkedin.com/in/thomas-christ-81116319a/)
 
-## 📜 Abstract
+➡️ **[Read the full Thesis PDF](./Wild-2025-Foundation-Models-TSF-Exogenous-Variables.pdf)**
+
+### 📜 Abstract
 
 Foundation Models (FMs) are emerging as a powerful new paradigm for Time Series Forecasting (TSF), offering the promise of strong generalization capabilities with minimal task-specific engineering. However, while the use of exogenous variables is critical for achieving high accuracy in many real-world forecasting scenarios, their integration into FMs remains a nascent and fragmented research area. This thesis addresses this significant research gap by providing the first systematic overview and comprehensive empirical benchmark of FMs that incorporate exogenous variables.
 
@@ -16,7 +36,7 @@ The key findings reveal that the impact of exogenous variables on FM performance
 
 Ultimately, this work concludes that for the practical application of FMs with exogenous variables, the field must likely move beyond a pure "zero-shot" approach toward a more nuanced "pre-train" and "fine-tune" paradigm. By providing a clear categorization of integration methods, a foundational empirical benchmark, and actionable insights into model behavior, this thesis establishes a crucial baseline for future research in a dynamic field whose advancement is currently hampered by a scarcity of suitable public datasets.
 
-## 🔑 Key Findings & Conclusion
+### 🔑 Key Findings & Conclusion
 
   * **The "No Free Lunch" Rule for Covariates:** Adding exogenous variables is a high-risk, architecture-dependent endeavor, not a guaranteed improvement. While some models benefit reliably, others can be significantly degraded by the same data. The method of integration is paramount.
 
@@ -28,9 +48,19 @@ Ultimately, this work concludes that for the practical application of FMs with e
 
   * **The FM Trade-Off:** The primary strengths of FMs are operational: significant gains in **computational speed** and a **simplified workflow**. The main weaknesses are a profound **lack of interpretability**, significant model-specific issues (e.g., prohibitive fine-tuning times, failure on certain data patterns), and a dependency on future-known covariates for the most successful integration methods.
 
-## 🚀 Code soon to be released
+### 💻 Code & Reproducibility
 
-The full codebase, including the benchmark framework and the modular Foundation Model Wrapper API, will be made publicly available soon to promote reproducible research.
+The full codebase used for the thesis is available in the [`code/`](./code) directory and is structured into two main components:
+
+1.  **🤖 The Benchmark Framework (`code/benchmark`)**
+    This contains the complete pipeline for data processing, forecasting execution, evaluation, and analysis. It orchestrates the experiments and calls the model API for GPU-based forecasts. It is built to run in a Docker container.
+    ➡️ **[View Benchmark README](./code/benchmark/README.md)**
+
+2.  **⚡ The Foundation Model API (`code/fm-api`)**
+    A self-contained FastAPI application designed to serve the GPU-intensive Foundation Models (like TimesFM, MOIRAI, etc.) and DL models. It is built to run in a Docker container.
+    ➡️ **[View API README](./code/fm-api/README.md)**
+
+---
 
 ## 🙏 Acknowledgements
 

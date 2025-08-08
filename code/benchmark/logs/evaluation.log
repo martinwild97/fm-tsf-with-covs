@@ -1,0 +1,8 @@
+2025-06-08 21:32:22,316 - Evaluation - INFO - Successfully loaded data from /workspaces/master-thesis/data/forecasts/data.csv (3544132 rows).
+2025-06-08 21:32:22,905 - Evaluation - INFO - Successfully loaded data from /workspaces/master-thesis/data/forecasts/meta.csv (48782 rows).
+2025-06-08 21:32:46,733 - Evaluation - INFO - Successfully loaded data from /workspaces/master-thesis/data/metrics.csv (65125 rows).
+2025-06-08 21:32:46,767 - Evaluation - INFO - Filtered metrics DataFrame to 9864 rows for models ['(S)ARIMAx', 'ETS', 'Theta', 'LightGBM', 'Chronos + LR', 'Chronos + GBM', 'TimeGPT', 'TimeGPT Finetuned', 'TTM', 'TTM Finetuned', 'TimesFM', 'MOIRAI', 'MOIRAI MoE', 'TiDE', 'NBEATSx'] and modes ['No Exogenous'].
+2025-06-08 21:32:46,777 - Evaluation - INFO - Aggregated metrics DataFrame has 1725 rows after per-ts aggregation.
+2025-06-08 21:32:46,780 - Evaluation - INFO - Filtered metrics DataFrame to 1515 rows after applying require_all_ts_ids filter.
+2025-06-08 21:32:46,782 - Evaluation - INFO - Included 101 unique ts_ids out of 117 total ts_ids in the final aggregated metrics DataFrame.
+2025-06-08 21:32:47,599 - Evaluation - INFO - Plot saved to /workspaces/master-thesis/data/plots/mase_barplot_no_covariates.png
