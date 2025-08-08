@@ -110,7 +110,7 @@ The following table provides a detailed comparison of some of the most important
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Chronos** | Amazon | T5 Encoder-Decoder | Value Tokenization (Patching - Bolt Variant) | Neg. Log-Likelihood | Probabilistic | Univariate (Exogenous Variables via external regressor) | Bolt Variant optimized for CPU  | [Details](./models/chronos.md) |
 | **TimesFM** | Google | Decoder-Only | Patching | MSE | Non-Probabilistic | Univariate (Exogenous Variables via external regressor) | Probabilistic output available but not trained for | [Details](./models/timesfm.md) |
-| **TimeGPT** | Nixtla | Encoder-Decoder | Point-wise | Unknown | Non-Probabilistic | Univariate, supports Exogenous Variables | Proprietary, API-based FM | [Details](./models/timegpt.md) |
+| **TimeGPT** | Nixtla | Encoder-Decoder | Point-wise | Unknown | Probabilistic | Univariate, supports Exogenous Variables | Proprietary, API-based FM | [Details](./models/timegpt.md) |
 | **MOIRAI** | Salesforce | Encoder-Only | Patching | Log-Likelihood | Probabilistic | Multivariate, supports Exogenous Variables | Universal forecasting via "Any-variate Attention". | [Details](./models/moirai.md) |
 | **TTM** | IBM | MLP-Mixer | Adaptive Patching | MSE | Non-Probabilistic | Multivariate | Lightweight and efficient forecasting | [Details](./models/ttm.md) |
 
